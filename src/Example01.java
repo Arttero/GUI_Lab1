@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 
 public class Example01 extends JFrame {
     private JPanel JPanel1;
@@ -11,6 +12,7 @@ public class Example01 extends JFrame {
     private JPanel JPanelLabel;
     private JButton killButton;
     private JLabel dataLabel;
+    private JButton wyjscieButton;
 
 
     public Example01() {
@@ -32,6 +34,24 @@ public class Example01 extends JFrame {
 
                 int a = JOptionPane.showConfirmDialog(null,"Wpisano dane: "+ text,
                         "To jest moje okno ",JOptionPane.YES_NO_OPTION);
+            }
+        });
+        witajButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                textInputLabel.setText("Dziś jest środa");
+            }
+        });
+        killButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dataLabel.setText(new Date().toString());
+            }
+        });
+        wyjscieButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();//zamyka nasze GUI
             }
         });
     }

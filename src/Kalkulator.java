@@ -37,5 +37,22 @@ public class Kalkulator extends JFrame {
                 inputBLabel.setText(" ");
             }
         });
+        różnicaButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                valueA = Double.parseDouble(inputA.getText());
+                valueB = Double.parseDouble(inputB.getText());
+                score = valueA - valueB;
+                wynikLabel.setText("Różnica "+ String.valueOf(valueA) + " - " + String.valueOf(valueB) + " = " + String.valueOf(score));
+                inputALabel.setText(" ");
+                inputBLabel.setText(" ");
+            }
+        });
+        wyjścieButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+            }
+        });
     }
 }
